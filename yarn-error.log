@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js add ts-node
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.14.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/davidecarpini/vas/zipper/package.json: Unexpected token } in JSON at position 337
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "@vas/dsc-share",
+    "version": "1.0.0",
+    "main": "build/index.js",
+    "typings": "build/index.d.ts",
+    "license": "MIT",
+    "scripts": {
+      "test": "./scripts/test.sh",
+      "compile": "tsc -p tsconfig.json",
+      "compile-watch": "yarn compile -w",
+      "start": "ts-node ./src/index.ts",
+      "start-watch": "yarn start -w",
+    },
+    "devDependencies": {
+      "@types/node": "^10.12.21",
+      "source-map-support": "^0.5.10",
+      "typescript": "^3.3.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

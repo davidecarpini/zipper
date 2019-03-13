@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "*": ["types/*"] },
+    "outDir": "./build/",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "target": "es5",
+    "lib": [ "es6" ],
+    "sourceMap": true,
+    "types": [ "node" ],
+    "declaration": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
