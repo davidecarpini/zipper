@@ -9,7 +9,7 @@
     "compile": "tsc -p tsconfig.json",
     "watch-compile": "yarn compile -w",
     "start": "ts-node ./src/index.ts",
-    "watch-start": "yarn start -w"
+    "watch-start": "nodemon --exec 'ts-node' --watch 'src/**/*.ts' ./src/index.ts"
   },
   "devDependencies": {
     "@types/node": "^10.12.21",
@@ -22,7 +22,10 @@
     "@types/mocha": "^5.2.6",
     "@types/uuid": "^3.4.4",
     "archiver": "^3.0.0",
+    "convict": "^4.4.1",
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
     "mocha": "^6.0.2",
     "ts-mocha": "^6.0.0",
     "ts-node": "^8.0.3",
