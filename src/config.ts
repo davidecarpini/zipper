@@ -2,7 +2,7 @@ import * as convict from 'convict';
 
 export default convict({
   port: {
-    default: '3000',
+    default: '3100',
     format: 'port',
     env: 'PORT'
   },

@@ -6,6 +6,7 @@ import * as bodyParser from 'koa-bodyparser';
 import Zipper from './Zipper';
 import { tempFolder } from './types';
 import config from './config';
+const cors = require('@koa/cors');
 
 const zipper = new Zipper();
 const app = new Koa();
@@ -19,14 +20,17 @@ setInterval(() => {
 router
 .put('/insert', (ctx: any) => {
   const { host, protocol } = ctx;
-  const zipName = ctx.request.body.zipName
-  const files = JSON.parse(ctx.request.body.files)
+  console.log( "ctx.request.body", ctx.request.body );
+  const body = ctx.request.body
+  const zipName = body.zipName
+  const files = body.files
   const token = zipper.insert(zipName, files)
   const basePath : string = ctx.headers['x-base-path'] || '';
   const baseUrl : string = `${protocol}://` + path.normalize(path.join(host, basePath) + '/');
   ctx.body = {
     statusUrl: `${baseUrl}status/${token}`,
     downloadUrl: `${baseUrl}download/${token}`,
+    index: zipper.tail.length - 1
   };
 });
 
@@ -142,6 +146,7 @@ router.get('/admin/monitor', (ctx: any) => {
 })
 
 app
+.use(cors())
 .use(bodyParser())
 .use(router.routes())
 .use(router.allowedMethods())

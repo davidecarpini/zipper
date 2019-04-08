@@ -1,5 +1,5 @@
 {
-  "name": "@vas/dsc-share",
+  "name": "@vas/zipper",
   "version": "1.0.0",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
@@ -17,6 +17,7 @@
     "typescript": "^3.3.1"
   },
   "dependencies": {
+    "@koa/cors": "2",
     "@types/archiver": "^2.1.2",
     "@types/koa": "^2.0.48",
     "@types/mocha": "^5.2.6",

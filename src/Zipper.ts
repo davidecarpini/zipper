@@ -128,7 +128,6 @@ class Zipper {
         const files = this.tail[0].files;
         files.forEach( file => {
           const path = `${tempFolder}${file.serverFilename}`;
-          fs.unlinkSync(path);
         })
         this.completedZip.push({
           token: this.tail[0].token,
