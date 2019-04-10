@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var convict = require("convict");
 exports.default = convict({
     port: {
-        default: '3100',
+        default: '3102',
         format: 'port',
         env: 'PORT'
     },

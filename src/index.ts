@@ -26,7 +26,7 @@ router
   const files = body.files
   const token = zipper.insert(zipName, files)
   const basePath : string = ctx.headers['x-base-path'] || '';
-  const baseUrl : string = `${protocol}://` + path.normalize(path.join(host, basePath) + '/');
+  const baseUrl : string = `https://` + path.normalize(path.join(host, basePath) + '/');
   ctx.body = {
     statusUrl: `${baseUrl}status/${token}`,
     downloadUrl: `${baseUrl}download/${token}`,

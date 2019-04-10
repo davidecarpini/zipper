@@ -25,7 +25,7 @@ router
     var files = body.files;
     var token = zipper.insert(zipName, files);
     var basePath = ctx.headers['x-base-path'] || '';
-    var baseUrl = protocol + "://" + path.normalize(path.join(host, basePath) + '/');
+    var baseUrl = "https://" + path.normalize(path.join(host, basePath) + '/');
     ctx.body = {
         statusUrl: baseUrl + "status/" + token,
         downloadUrl: baseUrl + "download/" + token,
