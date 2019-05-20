@@ -13,7 +13,7 @@ var zipper = new Zipper_1.default();
 var app = new Koa();
 var router = new Router();
 setInterval(function () {
-    console.log('...checking');
+    //console.log('...checking')
     zipper.trigger();
 }, 500);
 router

@@ -13,7 +13,7 @@ const app = new Koa();
 const router = new Router();
 
 setInterval(() => {
-  console.log('...checking')
+  //console.log('...checking')
   zipper.trigger();
 }, 500)
 
